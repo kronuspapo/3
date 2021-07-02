@@ -74,6 +74,10 @@ def do_distro_install(distro):
         pretty.info("We are updating python3, open-jdk and pip")
         script = os.path.join(real_dir, 'app', 'pop_20_10.sh')
 
+    elif distro == "pop_21_04.sh":
+        pretty.info("We are updating python3, open-jdk and pip")
+        script = os.path.join(real_dir, 'app', 'pop_21_04.sh')
+
     elif distro == "debian_10.sh":
         pretty.info("We are updating python3, open-jdk and pip")
         script = os.path.join(real_dir, 'app', 'debian_10.sh')
@@ -347,8 +351,11 @@ def get_distro():
         elif version == "20.10":
             logger.info("POP 20.10 Detected")
             file = "pop_20_10.sh"
+        elif version == "21.04":
+            logger.info("POP 21.04 Detected")
+            file = "pop_21_04.sh"
         else:
-            logger.critical("Unsupported POP - We only support PopOS 18.04 / 20.04 / 20.10")
+            logger.critical("Unsupported POP - We only support PopOS 18.04 / 20.04 / 20.10 / 21.04")
 
     elif id == "ubuntu":
         if version == "18.04":
