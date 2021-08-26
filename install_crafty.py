@@ -161,14 +161,11 @@ def do_virt_dir_install():
     pretty.info("Choose your destiny:")
     pretty.info("Crafty comes in different branches:")
     pretty.info("Master - Most Stable, should be bug free")
-    pretty.info("Beta - Pretty Stable, very few bugs known")
-    pretty.info("Snaps - Unstable, but full of exciting things!")
     pretty.info("Dev - Highly Unstable, full of bugs and new features")
 
     # unattended
     if not defaults['unattended']:
-        branch = helper.get_user_valid_input("Which branch of Crafty would you like to run?", ['master', 'beta',
-                                                                                               'snaps', 'dev'])
+        branch = helper.get_user_valid_input("Which branch of Crafty would you like to run?", ['master', 'dev'])
     else:
         branch = defaults['branch']
 
