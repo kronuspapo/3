@@ -58,6 +58,10 @@ def do_distro_install(distro):
         pretty.info("We are updating python3, open-jdk and pip")
         script = os.path.join(real_dir, 'app', 'ubuntu_20_10.sh')
 
+    elif distro == "ubuntu_21_04.sh":
+        pretty.info("We are updating python3, open-jdk and pip")
+        script = os.path.join(real_dir, 'app', 'ubuntu_21_04.sh')
+
     elif distro == "pop_18_04.sh":
         pretty.info("We are updating python3, open-jdk and pip")
         script = os.path.join(real_dir, 'app', 'pop_18_04.sh')
@@ -69,6 +73,10 @@ def do_distro_install(distro):
     elif distro == "pop_20_10.sh":
         pretty.info("We are updating python3, open-jdk and pip")
         script = os.path.join(real_dir, 'app', 'pop_20_10.sh')
+
+    elif distro == "pop_21_04.sh":
+        pretty.info("We are updating python3, open-jdk and pip")
+        script = os.path.join(real_dir, 'app', 'pop_21_04.sh')
 
     elif distro == "debian_10.sh":
         pretty.info("We are updating python3, open-jdk and pip")
@@ -85,6 +93,10 @@ def do_distro_install(distro):
     elif distro == "mint_20.sh":
         pretty.info("We are updating python3, open-jdk and pip")
         script = os.path.join(real_dir, 'app', 'mint_20.sh')
+
+    elif distro == "mint_20_2.sh":
+        pretty.info("We are updating python3, open-jdk and pip")
+        script = os.path.join(real_dir, 'app', 'mint_20_2.sh')
 
     elif distro == "arch.sh":
         pretty.info("We are updating python, open-jdk, and pip")
@@ -149,14 +161,11 @@ def do_virt_dir_install():
     pretty.info("Choose your destiny:")
     pretty.info("Crafty comes in different branches:")
     pretty.info("Master - Most Stable, should be bug free")
-    pretty.info("Beta - Pretty Stable, very few bugs known")
-    pretty.info("Snaps - Unstable, but full of exciting things!")
     pretty.info("Dev - Highly Unstable, full of bugs and new features")
 
     # unattended
     if not defaults['unattended']:
-        branch = helper.get_user_valid_input("Which branch of Crafty would you like to run?", ['master', 'beta',
-                                                                                               'snaps', 'dev'])
+        branch = helper.get_user_valid_input("Which branch of Crafty would you like to run?", ['master', 'dev'])
     else:
         branch = defaults['branch']
 
@@ -343,8 +352,11 @@ def get_distro():
         elif version == "20.10":
             logger.info("POP 20.10 Detected")
             file = "pop_20_10.sh"
+        elif version == "21.04":
+            logger.info("POP 21.04 Detected")
+            file = "pop_21_04.sh"
         else:
-            logger.critical("Unsupported POP - We only support PopOS 18.04 / 20.04 / 20.10")
+            logger.critical("Unsupported POP - We only support PopOS 18.04 / 20.04 / 20.10 / 21.04")
 
     elif id == "ubuntu":
         if version == "18.04":
@@ -356,8 +368,11 @@ def get_distro():
         elif version == "20.10":
             logger.info("Ubuntu 20.10 Detected")
             file = "ubuntu_20_10.sh"
+        elif version == "21.04":
+            logger.info("Ubuntu 21.04 Detected")
+            file = "ubuntu_21_04.sh"
         else:
-            logger.critical("Unsupported Ubuntu - We only support Ubuntu 18.04 / 20.04 / 20.10")
+            logger.critical("Unsupported Ubuntu - We only support Ubuntu 18.04 / 20.04 / 20.10 / 21.04")
 
     elif id == "centos":
         if version == "8":
@@ -369,6 +384,9 @@ def get_distro():
     elif id == "linuxmint":
         if version == "20":
             logger.info("Mint 20 Detected")
+            file = "mint_20.sh"
+        if version == "20.2":
+            logger.info("Mint 20.2 Detected")
             file = "mint_20.sh"
         else:
             logger.critical("Unsupported Mint - We only support Mint 20")
