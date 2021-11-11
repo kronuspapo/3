@@ -376,7 +376,7 @@ def get_distro():
             logger.info("Ubuntu 21.04 Detected")
             file = "ubuntu_21_04.sh"
         elif version == "21.10":
-            logger.ingo("Ubuntu 21.10 Detected")
+            logger.info("Ubuntu 21.10 Detected")
             file = "ubuntu_21_10.sh"
         else:
             logger.critical("Unsupported Ubuntu - We only support Ubuntu 18.04 / 20.04 / 20.10 / 21.04 / 21.10")
