@@ -6,7 +6,7 @@ source ../venv/bin/activate
 
 pip3 install --upgrade requests
 pip3 install wheel
-pip3 install setuptools
-pip3 install setuptools-rust
+pip3 install setuptools >= 46.1.0
+pip3 install setuptools-rust >= 1.1.2
 pip3 install --no-cache-dir -r requirements.txt
 deactivate
