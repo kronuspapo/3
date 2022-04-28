@@ -15,7 +15,7 @@ fi
 
 if [ "${fail}" -eq 1 ];then
     echo "Please see the documentation for details:"
-    echo "    https://gitlab.com/crafty-controller/crafty-web/-/wikis/Install-Guides#install-crafty-on-linux"
+    echo "    https://wiki.craftycontrol.com/"
 elif [ "${fail}" -eq 0 ];then
     if [[ $EUID -ne 0 ]]; then
         echo "Note: You are not root. Re-executing this script as root using sudo"
